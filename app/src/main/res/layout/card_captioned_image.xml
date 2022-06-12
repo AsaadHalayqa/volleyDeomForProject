@@ -22,7 +22,7 @@
             android:scaleType="centerCrop"/>
         <TextView
             android:layout_width="match_parent"
-            android:id="@+id/txtName"
+            android:id="@+id/txtFName"
             android:layout_marginLeft="4dp"
             android:layout_marginBottom="4dp"
             android:layout_height="wrap_content" />

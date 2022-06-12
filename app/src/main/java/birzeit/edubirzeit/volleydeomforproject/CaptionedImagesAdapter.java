@@ -41,8 +41,8 @@ public class CaptionedImagesAdapter
         final Category category = items.get(position);
         CardView cardView = holder.cardView;
         ImageView imageView = (ImageView) cardView.findViewById(R.id.image);
-        Glide.with(context).load(category.getCatImage()).into(imageView);
-        TextView txt = (TextView)cardView.findViewById(R.id.txtName);
+        Glide.with(cardView.getContext()).load(category.getCatImage()).into(imageView);
+        TextView txt = (TextView)cardView.findViewById(R.id.txtFName);
         txt.setText(category.getCatName());
         cardView.setOnClickListener( new View.OnClickListener(){
             @Override

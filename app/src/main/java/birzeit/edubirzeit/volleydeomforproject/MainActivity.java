@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         recycler = findViewById(R.id.cat_recycler);
 
         recycler.setLayoutManager(new LinearLayoutManager(this));
@@ -46,38 +48,40 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btn_getCats_OnClick(View view) {
+        Intent intent = new Intent(this, LoginActivity.class);
+        this.startActivity(intent);
 
-        JsonArrayRequest request =new JsonArrayRequest(Request.Method.GET, BASE_URL,
-                null, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-                ArrayList<Category> categories =new ArrayList<>();
-
-                for (int i = 0; i < response.length(); i++){
-                    try {
-                        JSONObject obj = response.getJSONObject(i);
-                        categories.add(new Category(obj.getInt("catId"), obj.getString("catName"),
-                                obj.getString("catImage")));
-
-                    }catch(JSONException exception){
-                        Log.d("Error", exception.toString());
-                    }
-                }
-                CaptionedImagesAdapter adapter = new CaptionedImagesAdapter(MainActivity.this,
-                        categories);
-                recycler.setAdapter(adapter);
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-                Toast.makeText(MainActivity.this, error.toString(),
-                        Toast.LENGTH_SHORT).show();
-                Log.d("Error_json", error.toString());
-            }
-        });
-        queue.add(request);
+//        JsonArrayRequest request =new JsonArrayRequest(Request.Method.GET, BASE_URL,
+//                null, new Response.Listener<JSONArray>() {
+//            @Override
+//            public void onResponse(JSONArray response) {
+//                ArrayList<Category> categories =new ArrayList<>();
+//
+//                for (int i = 0; i < response.length(); i++){
+//                    try {
+//                        JSONObject obj = response.getJSONObject(i);
+//                        categories.add(new Category(obj.getInt("catId"), obj.getString("catName"),
+//                                obj.getString("catImage")));
+//
+//                    }catch(JSONException exception){
+//                        Log.d("Error", exception.toString());
+//                    }
+//                }
+//                CaptionedImagesAdapter adapter = new CaptionedImagesAdapter(MainActivity.this,
+//                        categories);
+//                recycler.setAdapter(adapter);
+//
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//
+//                Toast.makeText(MainActivity.this, error.toString(),
+//                        Toast.LENGTH_SHORT).show();
+//                Log.d("Error_json", error.toString());
+//            }
+//        });
+//        queue.add(request);
     }
 
     //get All users and store them in UserInfo Object

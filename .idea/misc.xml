@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Mobile Apps Codes/volleyDeomForProject/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.1225" />
+        <entry key="..\:/Mobile Apps Codes/volleyDeomForProject/app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.1225" />
+        <entry key="..\:/Mobile Apps Codes/volleyDeomForProject/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Mobile Apps Codes/volleyDeomForProject/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Mobile Apps Codes/volleyDeomForProject/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
         <entry key="..\:/Mobile Apps Codes/volleyDeomForProject/app/src/main/res/layout/card_captioned_image.xml" value="0.12952898550724637" />
       </map>
     </option>
